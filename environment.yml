@@ -1,0 +1,17 @@
+name: Ml_predict
+channels:
+ - conda-forge
+ - defaults
+dependencies:
+ - python== 3.8
+ - pandas
+ - pytest
+ - isort
+ - pre-commit
+ - flake8
+ - seaborn
+ - ipykernel
+ - nb_conda_kernels
+ - pandas-profiling
+ - pip
+ - Streamlit
