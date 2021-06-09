@@ -3,7 +3,7 @@ channels:
  - conda-forge
  - defaults
 dependencies:
- - python == 3.8.2
+ - python== 3.9
  - pandas
  - pytest
  - isort
@@ -14,3 +14,4 @@ dependencies:
  - nb_conda_kernels
  - pandas-profiling
  - pip
+ - scikit-learn
