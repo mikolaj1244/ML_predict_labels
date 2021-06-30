@@ -8,6 +8,8 @@
 * Markdown-Cheatsheet https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * machinelearningmastery https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
 #  EDA
+**Standard deviation is high and mean values have high variance** 
+
 
 |      | 304.361       | -436.590 | -33854.769       | -96571.569          | -15086.947| ...    |
 | ------------- |:-------------:| -----:| ------------- |:-------------:| -----:| -----:|
@@ -46,8 +48,9 @@
 ![](plots/pca_tesne_ss.png)
 
 #  Model Building
-First, we splited the data into train and tests sets with a test size of 10%.
-We few different models and evaluated them using F2 socre. We chose F2 socre because it gives less weight to precision and more weight to recall in the calculation of the score.
+Using the [framework for Spot-Checking Machine Learning Algorithms](https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/) we picked fiew models that might work for our task.
+Next splited the data into train and tests sets with a test size of 10%
+ and evaluated models using Fbeta2 socre. We chose Fbeta2 socre because it gives less weight to precision and more weight to recall in the calculation of the score.
 It is a useful metric to use when both precision and recall are important but slightly more attention is needed for false negatives.
 
 The models we have traied:
