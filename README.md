@@ -1,33 +1,36 @@
-# H1 Predicting Lables For Unbalanced Data Set: Project Overview
+#  Predicting Lables For Unbalanced Data Set: Project Overview
 * Predicted lables values of large (3749, 10000) imbalanced (1:3374, -1:375) data set (F2 socre ~ 0.93)
 * Optimized SVC, KNN, and Extra Trees Classifier using hyperopt-sklearn to reach the best model.
-# H2 Code and Resources Used:
+#  Code and Resources Used:
 * **Python Version:** 3.8
 * pandas, numpy, sklearn, matplotlib, seaborn, joblib
 * hyperopt-sklearn https://github.com/hyperopt/hyperopt-sklearn
 * Markdown-Cheatsheet https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * machinelearningmastery https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
-# H2 EDA
+#  EDA
 
-![alt text](https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/desc_plot.png "Describe")
+|      | 304.361       | -436.590 | -33854.769       | -96571.569          | -15086.947| ...    |
+| ------------- |:-------------:| -----:| ------------- |:-------------:| -----:| -----:|
+| count         | 3749.000000   | 3749.000000 | 	3749.000000    | 	3749.000000 | 3749.000000 | ...    |
+| mean          | 	30.571124   |   	9.199832 | 178.755026     | 837.059166|   -182.034161 | ...    |
+| std           | 	286.17565   |    213.070740 | 	43667.290847| 57108.922663     |   	21944.043101| ...    |
+| min           |-989.450000    |    -859.922000 | -163336.428000 | -243844.632000     |   -77566.109000	 | ...    |
+| 25%           | 	-163.862000 |    -135.333000 | -29259.560000 | -38027.475000      |   -14405.498000 | ...    |
+| 50%           | 35.463000      |    2.744000 | 1208.590000 |	1037.514000     |   -147.659000 | ...    |
+| 75%           | 215.740000     |    156.269000 | 	29640.573000 |	40569.974000      |    14526.865000| ...    |
+| 75%           | 	1224.394000    |    722.868000 | 177744.241000 | are neat      |    86287.955000 | ...    |
 
+|      | value counts   |
+| ------------- |:-------------:|
+| 1        | 3374   |
+| -1        | 	375   |
 
+ **wizualize the data using pca+tesne pipeline**
+![](plots/pca_tesne.png)
+ **wizualize the data using standardscaler+pca+tesne pipeline**
+![](plots/pca_tesne_ss.png)
 
-![alt text](https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/value_counts.png "value_counts 1")
-
-
-
-![alt text](https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/pca_tesne_ss.png  "pca_tesne_standard_scaler 1")
-
-
-
-
-![alt text](https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/pca_tesne.png  "pca_tesne 1")
-
-
-
-
-# H2 Model Building
+#  Model Building
 First, we splited the data into train and tests sets with a test size of 10%.
 We few different models and evaluated them using F2 socre. We chose F2 socre because it is ...
 The models we have traied:
@@ -38,7 +41,7 @@ The models we have traied:
 *
 *
 
-# H2 Modle Preformence
+# H2 Models Preformence
 * 
 *
 *
