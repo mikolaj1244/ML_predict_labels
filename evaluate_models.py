@@ -17,7 +17,7 @@ def evaluate_model(model, y_test, X_test):
         return score of a model based on f2 metric
     """
     y_pred = model.predict(X_test)
-    score = fbeta_score(y_test, y_pred, average='macro', beta=2)
+    score = fbeta_score(y_test, y_pred, average='macro', beta=1)
     return score
 
 
@@ -100,7 +100,7 @@ def get_scores(svc, dummy, knn, extra_trees, y_test, X_test):
         X_test: 0% of the data
 
     Returns:
-        return1: score of a model based on f0.5 metric
+        return1: score of a model based on f1 metric
         return2: names list of model names
     """
     scores = []
@@ -120,13 +120,13 @@ def plot(scores, names):
         scores: list with scores of models
         names: names of models
     Returns:
-        return1: score of a model based on f0.5 metric
+        return1: score of a model based on F1 metric
         return2: names list of model names
     """
     fig = plt.figure(figsize=(10, 5))
-    plt.bar(names, scores, color='#969696')
+    plt.bar(names, scores, color='#e3bc95')
     plt.xlabel('models', fontsize=12, color='#323232')
-    plt.ylabel('f05 score', fontsize=12, color='#323232')
+    plt.ylabel('Fbeta1 score', fontsize=12, color='#323232')
     plt.title('Models scores', fontsize=16, color='#323232')
     plt.savefig('models.png')
     dirname = os.path.dirname(__file__)
