@@ -32,8 +32,8 @@
 
 #  Model Building
 First, we splited the data into train and tests sets with a test size of 10%.
-We few different models and evaluated them using F2 socre. We chose F2 socre because it is ...
-
+We few different models and evaluated them using F2 socre. We chose F2 socre because it gives less weight to precision and more weight to recall in the calculation of the score.
+It is a useful metric to use when both precision and recall are important but slightly more attention is needed for false negatives.
 The models we have traied:
 * SVC
 * KNN
@@ -50,7 +50,8 @@ The models we have traied:
 * Dummy Classiier(strategy='uniform') - for the baseline 0.396
 ![](confiusion_maps/dummy.png)
 ![](plots/models.png)
-* 
-* 
 
-# H2 Predicted lables 
+The SVC model outperformed the other approaches on the test and validation sets. Preditcing almost perfectly minority class. But having a fiew more False positives
+
+
+# Predicted lables 
