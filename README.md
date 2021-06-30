@@ -8,10 +8,23 @@
 * Markdown-Cheatsheet https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * machinelearningmastery https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
 # H2 EDA
-[logo]
-[logo]:(https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/desc_plot.png "Describe")
-[logo]:(https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/value_counts.png "value_counts 1") [logo]:(https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/pca_tesne_ss.png  "pca_tesne_standard_scaler 1")
-[logo]:(https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/pca_tesne.png  "pca_tesne 1")
+
+!(https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/desc_plot.png "Describe")
+
+
+
+!(https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/value_counts.png "value_counts 1")
+
+
+
+!(https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/pca_tesne_ss.png  "pca_tesne_standard_scaler 1")
+
+
+
+
+!(https://github.com/mikolaj1244/ML_predict_labels/tree/Miko%C5%82aj_Marcinkiewicz/plots/pca_tesne.png  "pca_tesne 1")
+
+
 
 
 # H2 Model Building
