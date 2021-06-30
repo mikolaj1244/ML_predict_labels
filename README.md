@@ -8,7 +8,7 @@
 * Markdown-Cheatsheet https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * machinelearningmastery https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
 #  EDA
-**Standard deviation is high and mean values have high variance** 
+**Standard deviation is high and mean values have excessive variance** 
 
 
 |      | 304.361       | -436.590 | -33854.769       | -96571.569          | -15086.947| ...    |
