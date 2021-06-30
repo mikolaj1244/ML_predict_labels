@@ -7,6 +7,7 @@
 * hyperopt-sklearn https://github.com/hyperopt/hyperopt-sklearn
 * Markdown-Cheatsheet https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * machinelearningmastery https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
+* machinelearningmastery https://machinelearningmastery.com/fbeta-measure-for-machine-learning/
 #  EDA
 **Standard deviation is high and mean values have excessive variance.** 
 
