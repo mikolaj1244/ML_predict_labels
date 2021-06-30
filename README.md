@@ -82,4 +82,4 @@ The SVC model outperformed the other approaches on the test and validation sets.
 
 
 # Predicted lables 
-Predicted lables by SVC model are available in csv file 
+Predicted lables by SVC model are available in lables folder.
