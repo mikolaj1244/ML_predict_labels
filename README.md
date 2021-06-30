@@ -33,18 +33,24 @@
 #  Model Building
 First, we splited the data into train and tests sets with a test size of 10%.
 We few different models and evaluated them using F2 socre. We chose F2 socre because it is ...
+
 The models we have traied:
 * SVC
 * KNN
 * Extra Trees Classifier
 * Dummy Classiier(strategy='uniform') - for the baseline
-*
-*
 
 # H2 Models Preformence
+* SVC 0.932
+![](confiusion_maps/svc.png)
+* KNN 0.847
+![](confiusion_maps/knn.png)
+* Extra Trees Classifier 0.895
+![](confiusion_maps/extra%20trees.png)
+* Dummy Classiier(strategy='uniform') - for the baseline 0.396
+![](confiusion_maps/dummy.png)
+![](plots/models.png)
 * 
-*
-*
-*
-*
+* 
+
 # H2 Predicted lables 
