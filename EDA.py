@@ -1,24 +1,24 @@
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from sklearn.pipeline import Pipeline
-from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt
-from pandas.plotting import table
-from sklearn.ensemble import IsolationForest
-import seaborn as sns
 import os
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+from pandas.plotting import table
+from sklearn.decomposition import PCA
+from sklearn.ensemble import IsolationForest
+from sklearn.manifold import TSNE
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 
 
 def read_files():
     """Function is loading the data set
     Returns:
-        return X - train data, X_t - data to be predicted, y - train lables
+        return X - train data, y - train lables
     """
     X = pd.read_csv('train_data.csv')
-    X_t = pd.read_csv('test_data.csv')
     y = pd.read_csv('train_labels.csv')
-    return X, X_t, y
+    return X, y
 
 
 def describe(X):
@@ -26,8 +26,8 @@ def describe(X):
     Args:
         X: train data
     """
-    X_short = X.iloc[:, [1, 2, 3, 4, 5]]
-    desc = X_short.describe()
+    x_short = X.iloc[:, [1, 2, 3, 4, 5]]
+    desc = x_short.describe()
     fig = plt.figure(figsize=(10, 10))
     plot = plt.subplot(frame_on=False)
     plot.xaxis.set_visible(False)
@@ -83,8 +83,7 @@ def null_detect(X):
     print(f"null count: {X.isnull().sum().sum()}")
 
 
-
-def pca_tesne_ss(X,y):
+def pca_tesne_ss(X, y):
     """Function is using pca + tesne + StandardScaler pipeline to plot dataset.
     Args:
         X: train data
@@ -123,7 +122,7 @@ def outliers(X):
 
 
 def main():
-    X, X_t, y = read_files()
+    X, y = read_files()
     value_counts(y)
     describe(X)
     pca_tesne(X,y)

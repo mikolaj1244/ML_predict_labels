@@ -1,24 +1,23 @@
-from sklearn.metrics import fbeta_score
-from sklearn.metrics import confusion_matrix
-import joblib
-import pandas as pd
 import os
-from functions import  read_flies_train_test_split
+import joblib
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sn
+from sklearn.metrics import confusion_matrix, fbeta_score
+from functions import read_flies_train_test_split
 
 
 def evaluate_model(model, y_test, X_test):
-    """Function is evaluating model with f0.5 metric
+    """Function is evaluating model with f2 metric
     Args:
         model: model loaded using joblib
         y_test: 10% of the lables
         X_test: 10% of the data
     Returns:
-        return score of a model based on f0.5 metric
+        return score of a model based on f2 metric
     """
     y_pred = model.predict(X_test)
-    score = fbeta_score(y_test, y_pred, average='macro', beta=0.5)
+    score = fbeta_score(y_test, y_pred, average='macro', beta=2)
     return score
 
 
@@ -31,7 +30,7 @@ def cm(model, y_test, X_test, names):
         names: name of evaluation model
 
     Returns:
-        return score of a model based on f0.5 metric
+        return score of a model based on f2 metric
     """
     y_pred = model.predict(X_test)
     cm = (confusion_matrix(y_test, y_pred))
@@ -41,7 +40,6 @@ def cm(model, y_test, X_test, names):
     sn.set(font_scale=1.4)  # for label size
     sn.heatmap(df_cm, annot=True, fmt='g', annot_kws={"size": 16})  # font size
     plt.title(f'confiusion matrix for {names}', fontsize=16, color='#323232')
-    plt.show()
     dirname = os.path.dirname(__file__)
     fig.savefig(dirname + f'/confiusion_maps/{names}.png')
 
@@ -58,7 +56,7 @@ def get_cm(svc, dummy, knn, extra_trees, y_test, X_test, names):
         names: name of model
 
     Returns:
-        return score of a model based on f0.5 metric
+        return score of a model based on f2 metric
     """
     cm(svc,y_test, X_test, names[0])
     cm(dummy, y_test, X_test, names[1])
@@ -125,12 +123,14 @@ def plot(scores, names):
         return1: score of a model based on f0.5 metric
         return2: names list of model names
     """
-    plt.figure(figsize=(10, 5))
+    fig = plt.figure(figsize=(10, 5))
     plt.bar(names, scores, color='#969696')
     plt.xlabel('models', fontsize=12, color='#323232')
-    plt.ylabel('f0.5score', fontsize=12, color='#323232')
-    plt.title('scores of diffrent models', fontsize=16, color='#323232')
-    plt.show()
+    plt.ylabel('f05 score', fontsize=12, color='#323232')
+    plt.title('Models scores', fontsize=16, color='#323232')
+    plt.savefig('models.png')
+    dirname = os.path.dirname(__file__)
+    fig.savefig(dirname + '/plots/models.png')
 
 
 def main():

@@ -1,4 +1,6 @@
-from functions import existing_dictionary, read_flies_train_test_split, evaluate_model, save_model, model_traning_dummy
+from functions import (evaluate_model, existing_dictionary,
+                       model_traning_dummy, read_flies_train_test_split,
+                       save_model)
 
 
 def main():

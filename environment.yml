@@ -12,7 +12,6 @@ dependencies:
  - seaborn
  - ipykernel
  - nb_conda_kernels
- - pandas-profiling
  - pip
  - scikit-learn
  - imbalanced-learn

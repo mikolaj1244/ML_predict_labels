@@ -1,5 +1,7 @@
-from functions import existing_dictionary, read_flies_train_test_split, model_traning, evaluate_model, save_model
 from hpsklearn import extra_trees
+
+from functions import (evaluate_model, existing_dictionary, model_traning,
+                       read_flies_train_test_split, save_model)
 
 
 def main():

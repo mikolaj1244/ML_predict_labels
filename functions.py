@@ -1,26 +1,10 @@
-from sklearn.model_selection import train_test_split
-from sklearn.dummy import DummyClassifier
-from sklearn.metrics import confusion_matrix
-from hpsklearn import HyperoptEstimator
+import os
 import joblib
 import pandas as pd
-from os import path
-import os
-
-
-def existing_dictionary(file: str):
-    """Function is checking if dictionary is
-     already existing, and creating it
-    if is not.
-    Args:
-        file: Name of the dictionary that is being checked
-    Returns:
-        return_1 creates dictionary with given name (file)
-        return_2 returns None if folders are already existing.
-    """
-    if not path.exists(file):
-        return os.mkdir(file)
-    return None
+from hpsklearn import HyperoptEstimator
+from sklearn.dummy import DummyClassifier
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split
 
 
 def read_flies_train_test_split():
@@ -32,7 +16,6 @@ def read_flies_train_test_split():
         return_1 splits the data into X_train, X_test, y_train, y_test
     """
     X = pd.read_csv('train_data.csv')
-    X_t = pd.read_csv('test_data.csv')
     y = pd.read_csv('train_labels.csv')
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
     return X_train, X_test, y_train, y_test
