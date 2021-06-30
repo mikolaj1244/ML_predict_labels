@@ -1,5 +1,5 @@
 #  Predicting Lables For Unbalanced Data Set: Project Overview
-* Predicted lables values of large (3749, 10000) imbalanced (1:3374, -1:375) data set (F2 socre ~ 0.93)
+* Predicted lables values of large (3749, 10000) imbalanced (1:3374, -1:375) dataset (F2 socre ~ 0.93)
 * Optimized SVC, KNN, and Extra Trees Classifier using hyperopt-sklearn to reach the best model.
 #  Code and Resources Used:
 * **Python Version:** 3.8
@@ -20,38 +20,63 @@
 | 75%           | 215.740000     |    156.269000 | 	29640.573000 |	40569.974000      |    14526.865000| ...    |
 | 75%           | 	1224.394000    |    722.868000 | 177744.241000 | are neat      |    86287.955000 | ...    |
 
+
+**Imbalance in the data set is about 10% - 90%** 
+
 |      | value counts   |
 | ------------- |:-------------:|
 | 1        | 3374   |
 | -1        | 	375   |
 
- **wizualize the data using pca+tesne pipeline**
+**There are no num values in the dataset** 
+
+`X.isnull().sum().sum() = 0` 
+
+**Using the IsolationForest algorithm we find out that there are about 375 outliers in the dataset** 
+
+`Data set before outliers detection(3749, 10000)`
+
+`Data set after outliers detection(3374, 10000)`
+
+
+
+ **Visualize the data using pca+tesne pipeline**
 ![](plots/pca_tesne.png)
- **wizualize the data using standardscaler+pca+tesne pipeline**
+ **Visualize the data using standardscaler+pca+tesne pipeline**
 ![](plots/pca_tesne_ss.png)
 
 #  Model Building
 First, we splited the data into train and tests sets with a test size of 10%.
 We few different models and evaluated them using F2 socre. We chose F2 socre because it gives less weight to precision and more weight to recall in the calculation of the score.
 It is a useful metric to use when both precision and recall are important but slightly more attention is needed for false negatives.
+
 The models we have traied:
 * SVC
 * KNN
 * Extra Trees Classifier
 * Dummy Classiier(strategy='uniform') - for the baseline
 
-# H2 Models Preformence
-* SVC 0.932
+# Models Preformence
+* SVC
+
+Fbeta2 score `0.932`
 ![](confiusion_maps/svc.png)
-* KNN 0.847
+* KNN 
+
+Fbeta2 score `0.847`
 ![](confiusion_maps/knn.png)
-* Extra Trees Classifier 0.895
+* Extra Trees Classifier
+
+ Fbeta2 score `0.895`
 ![](confiusion_maps/extra%20trees.png)
-* Dummy Classiier(strategy='uniform') - for the baseline 0.396
+* Dummy Classifier(strategy='uniform') - for the baseline.
+
+Fbeta2 score `0.396`
 ![](confiusion_maps/dummy.png)
 ![](plots/models.png)
 
-The SVC model outperformed the other approaches on the test and validation sets. Preditcing almost perfectly minority class. But having a fiew more False positives
+The SVC model outperformed the other approaches on the test and validation sets. Preditcing almost perfectly minority class. But having a fiew more False positives than other clasifiers. We assume that giving slightly more importance to minority class is the right approach. SCV scores well compared to Dummy Classifier, which predicted both classes randomly based on class distribution.
 
 
 # Predicted lables 
+Predicted lables by SVC model are available in csv file 
