@@ -8,7 +8,7 @@
 * Markdown-Cheatsheet https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * machinelearningmastery https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
 #  EDA
-**Standard deviation is high and mean values have excessive variance** 
+**Standard deviation is high and mean values have excessive variance.** 
 
 
 |      | 304.361       | -436.590 | -33854.769       | -96571.569          | -15086.947| ...    |
@@ -23,18 +23,18 @@
 | 75%           | 	1224.394000    |    722.868000 | 177744.241000 | are neat      |    86287.955000 | ...    |
 
 
-**Imbalance in the data set is about 10% - 90%** 
+**Imbalance in the data set is about 10% - 90%.** 
 
 |      | value counts   |
 | ------------- |:-------------:|
 | 1        | 3374   |
 | -1        | 	375   |
 
-**There are no null values in the dataset** 
+**There are no null values in the dataset.** 
 
 `X.isnull().sum().sum() = 0` 
 
-**Using the IsolationForest algorithm we find out that there are about 375 outliers in the dataset** 
+**Using the IsolationForest algorithm we find out that there are about 375 outliers in the dataset.** 
 
 `Data set before outliers detection(3749, 10000)`
 
@@ -42,13 +42,13 @@
 
 
 
- **Visualize the data using pca+tesne pipeline**
+ **Visualize the data using pca+tesne pipeline.**
 ![](plots/pca_tesne.png)
- **Visualize the data using standardscaler+pca+tesne pipeline**
+ **Visualize the data using standardscaler+pca+tesne pipeline.**
 ![](plots/pca_tesne_ss.png)
 
 #  Model Building
-Using the [framework for Spot-Checking Machine Learning Algorithms](https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/) we picked fiew models that might work for our task.
+Using the [framework for Spot-Checking Machine Learning Algorithms](https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/) we picked few models that might work for our task.
 Next splited the data into train and tests sets with a test size of 10%
  and evaluated models using Fbeta2 socre. We chose Fbeta2 socre because it gives less weight to precision and more weight to recall in the calculation of the score.
 It is a useful metric to use when both precision and recall are important but slightly more attention is needed for false negatives.
@@ -78,7 +78,7 @@ Fbeta2 score `0.396`
 ![](confiusion_maps/dummy.png)
 ![](plots/models.png)
 
-The SVC model outperformed the other approaches on the test and validation sets. Preditcing almost perfectly minority class. But having a fiew more False positives than other clasifiers. We assume that giving slightly more importance to minority class is the right approach. SCV scores well compared to Dummy Classifier, which predicted both classes randomly based on class distribution.
+The SVC model outperformed the other approaches on the test and validation sets. Preditcing almost perfectly minority class. But having a few more False positives than other clasifiers. We assume that giving slightly more importance to minority class is the right approach. SCV scores well compared to Dummy Classifier, which predicted both classes randomly based on class distribution.
 
 
 # Predicted lables 
