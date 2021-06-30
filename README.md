@@ -30,7 +30,7 @@
 | 1        | 3374   |
 | -1        | 	375   |
 
-**There are no num values in the dataset** 
+**There are no null values in the dataset** 
 
 `X.isnull().sum().sum() = 0` 
 
