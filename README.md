@@ -1,5 +1,5 @@
 #  Predicting Lables For Unbalanced Data Set: Project Overview
-* Predicted lables values of large (3749, 10000) imbalanced (1:3374, -1:375) dataset (F2 socre ~ 0.93)
+* Predicted lables values of large (3749, 10000) imbalanced (1:3374, -1:375) dataset (F1 socre ~ 0.904)
 * Optimized SVC, KNN, and Extra Trees Classifier using hyperopt-sklearn to reach the best model.
 #  Code and Resources Used:
 * **Python Version:** 3.8
