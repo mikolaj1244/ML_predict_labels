@@ -50,8 +50,8 @@
 #  Model Building
 Using the [framework for Spot-Checking Machine Learning Algorithms](https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/) we picked few models that might work for our task.
 Next splited the data into train and tests sets with a test size of 10%
- and evaluated models using Fbeta2 socre. We chose Fbeta2 socre because it gives less weight to precision and more weight to recall in the calculation of the score.
-It is a useful metric to use when both precision and recall are important but slightly more attention is needed for false negatives.
+ and evaluated models using F1 socre. We chose F1 socre because it is calculated as the harmonic mean of precision and recall, giving each the same weighting. It allows a model to be evaluated taking both the precision and recall into account using a single score, which is helpful when describing the performance of the model and in comparing models.
+
 
 The models we have traied:
 * SVC
@@ -62,19 +62,19 @@ The models we have traied:
 # Models Preformence
 * SVC
 
-Fbeta2 score `0.932`
+F1 score `0.904`
 ![](confiusion_maps/svc.png)
 * KNN 
 
-Fbeta2 score `0.847`
+F1 score `0.847`
 ![](confiusion_maps/knn.png)
 * Extra Trees Classifier
 
- Fbeta2 score `0.895`
+ F1 score `0.902`
 ![](confiusion_maps/extra%20trees.png)
 * Dummy Classifier(strategy='uniform') - for the baseline.
 
-Fbeta2 score `0.396`
+F1 score `0.396`
 ![](confiusion_maps/dummy.png)
 ![](plots/models.png)
 
