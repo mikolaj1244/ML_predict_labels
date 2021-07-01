@@ -61,19 +61,58 @@ The models we have traied:
 * Dummy Classiier(strategy='uniform') - for the baseline
 
 # Models Preformence
-* SVC
+* SVC   
+
+
+|               |   precision   |  recall  | f1-score      | support       |
+| ------------- |:-------------:| -----:   | ------------- |:-------------:| 
+|class -1       |  0.74         |  0.96    |   0.83        |    45         |
+|     class 1   |     0.99      |   0.95   |   0.97        |    330        |
+|   accuracy    |               |          |    0.95       |    375        |
+|  macro avg    |  0.87         |   0.96   |   0.90        |    375        |
+|weighted avg   |   0.96        |   0.95   |    0.96       |    375        |
+
+
 
 F1 score `0.904`
 ![](confiusion_maps/svc.png)
 * KNN 
 
+|                |     precision |   recall      | f1-score |  support     |
+| ------------- |:-------------:| -----:   | ------------- |:-------------:| 
+|    class -1   |    0.78    |  0.71    |  0.74      |  45|
+|     class 1  |     0.96   |   0.97   |   0.97    |   330|
+|    accuracy   |           |          |   0.94   |    375|
+|   macro avg  |     0.87   |   0.84   |   0.86   |    375|
+|weighted avg    |   0.94   |   0.94   |   0.94   |    375|
+
+
+
 F1 score `0.847`
 ![](confiusion_maps/knn.png)
 * Extra Trees Classifier
 
+|              |precision   | recall  |f1-score   |support|
+| ------------- |:-------------:| -----:   | ------------- |:-------------:| 
+ |   class -1    |   0.86  |    0.80    |  0.83    |   45|
+ |    class 1     |  0.97   |  0.98     | 0.98   |    330|
+|    accuracy     |         |           |  0.96  |     375|
+|   macro avg   |    0.92    |  0.89     | 0.90   |    375|
+|weighted avg      | 0.96   |   0.96     | 0.96     |  375|
+
+
  F1 score `0.902`
 ![](confiusion_maps/extra%20trees.png)
 * Dummy Classifier(strategy='uniform') - for the baseline.
+
+|          |    precision  |  recall  |f1-score |  support|
+| ------------- |:-------------:| -----:   | ------------- |:-------------:| 
+  |  class -1    |   0.10   |   0.42   |   0.16    |    45|
+ |    class 1   |    0.85    |  0.46    |  0.60     |  330|
+  |  accuracy    |           |         |   0.45    |   375|
+|   macro avg    |   0.47    |  0.44   |   0.38    |   375|
+|weighted avg    |   0.76   |   0.45   |   0.54    |   375|
+
 
 F1 score `0.396`
 ![](confiusion_maps/dummy.png)
