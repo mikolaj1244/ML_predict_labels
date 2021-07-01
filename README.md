@@ -153,4 +153,4 @@ Confusion matrix:
 CSV file with predicted labels by model with RandomizedSearchCV are available in branch mf_model.
 
 # Conclusion
-As a result, we have two strong models that give a score >90%. During data training we had some challenges with parameter completion (for example, when building a new model, we would definitely focus on finding the right metrics for a boosting classifier like XGBoost or CatBoost, because they can have high scores). It is possible that we would also change the metric when building the new model. A potential one is accuracy.
+As a result, we have two strong models that give a score >90%. During data training we had some challenges with parameter completion (for example, when building a new model, we would definitely focus on finding the right metrics for a boosting classifier like XGBoost or CatBoost, because they can have high scores). It is possible that we would also change the metric when building the new model.
