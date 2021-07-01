@@ -1,5 +1,5 @@
 #  Predicting Lables For Unbalanced Data Set: Project Overview
-* Predicted lables values of large (3749, 10000) imbalanced (1:3374, -1:375) dataset (F1 socre ~ 0.904)
+* Predicted lables values of large (3750, 10000) imbalanced (1:3375, -1:375) dataset (F1 socre ~ 0.904)
 * Optimized SVC, KNN, and Extra Trees Classifier using hyperopt-sklearn to reach the best model.
 #  Code and Resources Used:
 * **Python Version:** 3.8
@@ -12,9 +12,8 @@
 **Standard deviation is high and mean values have excessive variance.** 
 
 
-|      | 304.361       | -436.590 | -33854.769       | -96571.569          | -15086.947| ...    |
 | ------------- |:-------------:| -----:| ------------- |:-------------:| -----:| -----:|
-| count         | 3749.000000   | 3749.000000 | 	3749.000000    | 	3749.000000 | 3749.000000 | ...    |
+| count         | 3750.000000   | 3750.000000 | 	3750.000000    | 	3750.000000 | 3750.000000 | ...    |
 | mean          | 	30.571124   |   	9.199832 | 178.755026     | 837.059166|   -182.034161 | ...    |
 | std           | 	286.17565   |    213.070740 | 	43667.290847| 57108.922663     |   	21944.043101| ...    |
 | min           |-989.450000    |    -859.922000 | -163336.428000 | -243844.632000     |   -77566.109000	 | ...    |
@@ -28,7 +27,7 @@
 
 |      | value counts   |
 | ------------- |:-------------:|
-| 1        | 3374   |
+| 1        | 3375   |
 | -1        | 	375   |
 
 **There are no null values in the dataset.** 
@@ -37,9 +36,9 @@
 
 **Using the IsolationForest algorithm we find out that there are about 375 outliers in the dataset.** 
 
-`Data set before outliers detection(3749, 10000)`
+`Data set before outliers detection(3745, 10000)`
 
-`Data set after outliers detection(3374, 10000)`
+`Data set after outliers detection(3375, 10000)`
 
 
 
