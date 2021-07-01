@@ -1,6 +1,6 @@
-#  Predicting Lables For Unbalanced Data Set: Project Overview
-* Predicted lables values of large (3750, 10000) imbalanced (1:3375, -1:375) dataset (F1 socre ~ 0.904)
-* Optimized SVC, KNN, and Extra Trees Classifier using hyperopt-sklearn to reach the best model.
+#  Predicting Labels For Unbalanced Data Set: Project Overview
+* Predicted lables values of large (3750, 10000) imbalanced (1:3375, -1:375) dataset (F1 score ~ 0.92)
+* Optimized SVC, KNN, and Extra Trees Classifier using hyperopt-sklearn and LogisticRegression, SVC, RandomForestClassifier using RandomSearchCV to reach the best model.
 #  Code and Resources Used:
 * **Python Version:** 3.8
 * pandas, numpy, sklearn, matplotlib, seaborn, joblib
@@ -8,6 +8,10 @@
 * Markdown-Cheatsheet https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * machinelearningmastery https://machinelearningmastery.com/framework-for-imbalanced-classification-projects/
 * machinelearningmastery https://machinelearningmastery.com/fbeta-measure-for-machine-learning/
+
+# Metric
+* f1_score
+
 #  EDA
 **Standard deviation is high and mean values have excessive variance.** 
 
@@ -59,7 +63,7 @@ The models we have traied:
 * Extra Trees Classifier
 * Dummy Classiier(strategy='uniform') - for the baseline
 
-# Models Preformence
+# Models Performence
 * SVC   
 
 
@@ -114,11 +118,42 @@ F1 score `0.847`
 
 
 F1 score `0.396`
+
+* Dummy Classifier(strategy='stratified') - for the baseline.
+
+|          |    precision  |  recall  |f1-score |  support|
+| ------------- |:-------------:| -----:   | ------------- |:-------------:| 
+  |  class -1    |   0.11   |   0.11   |   0.11    |    123|
+ |    class 1   |    0.90    |  0.90    |  0.90     |  1115|
+| avg/total    |   0.82   |   0.82   |   0.82    |   1238|
+
+F1 score `0.82`
+
 ![](confiusion_maps/dummy.png)
 ![](plots/models.png)
 
 The SVC model outperformed the other approaches on the test and validation sets. Preditcing almost perfectly minority class. But having a few more False positives than other clasifiers. We assume that giving slightly more importance to minority class is the right approach. SCV scores well compared to Dummy Classifier, which predicted both classes randomly based on class distribution.
 
+# Model with connected Neptune 
+[RESULTS](https://app.neptune.ai/ml_cdv/predict-labels/experiments?split=tbl&dash=charts&viewId=standard-view)
 
-# Predicted lables 
-Predicted lables by SVC model are available in lables folder.
+For Neptune, we built a separate model using Pipeline and using parameters for the following classifiers: LogisticRegression, SVC, RandomForestClassifier.
+
+The model was computed using RandomizedSearchCV. The best model is the RandomForestClassifier with the following parameters: *{'classifier__n_estimators': 500, 'classifier__min_samples_split': 15, 'classifier__min_samples_leaf': 10, 'classifier__max_features': None, 'classifier__max_depth': 30, 'classifier': RandomForestClassifier(max_depth=30, max_features=None, min_samples_leaf=10, min_samples_split=15, n_estimators=500, random_state=42)}*
+
+For preprocessing, we used PCA(n_components=0.95) and MinMaxScaler.
+
+Best model result: f1_score = 0.92
+
+Confusion matrix:
+| | P | N |
+|----|-----|--|
+| P| 106      | 17      |
+| N| 15       | 	1100   |
+
+# Predicted labels 
+Predicted lables by SVC model are available in labels folder.
+CSV file with predicted labels by model with RandomizedSearchCV are available in branch mf_model.
+
+# Conclusion
+As a result, we have two strong models that give a score >90%. During data training we had some challenges with parameter completion (for example, when building a new model, we would definitely focus on finding the right metrics for a boosting classifier like XGBoost or CatBoost, because they can have high scores). It is possible that we would also change the metric when building the new model. A potential one is accuracy.
