@@ -130,9 +130,7 @@ F1 score `0.396`
 F1 score `0.82`
 
 ![](confiusion_maps/dummy.png)
-![](plots/models.png)
 
-The SVC model outperformed the other approaches on the test and validation sets. Preditcing almost perfectly minority class. But having a few more False positives than other clasifiers. We assume that giving slightly more importance to minority class is the right approach. SCV scores well compared to Dummy Classifier, which predicted both classes randomly based on class distribution.
 
 # Model with connected Neptune 
 [RESULTS](https://app.neptune.ai/ml_cdv/predict-labels/experiments?split=tbl&dash=charts&viewId=standard-view)
@@ -152,7 +150,6 @@ Confusion matrix:
 | N| 15       | 	1100   |
 
 # Predicted labels 
-Predicted lables by SVC model are available in labels folder.
 CSV file with predicted labels by model with RandomizedSearchCV are available in branch mf_model.
 
 # Conclusion
